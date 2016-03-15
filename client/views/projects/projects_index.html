@@ -1,0 +1,45 @@
+<template name="projectsIndex">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Projects</h1>
+      <a class="btn btn-primary" href="{{pathFor 'projectNew'}}" role="button">New project</a>
+
+      {{#if Template.subscriptionsReady}}
+        {{#if projects}}
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Title</th>
+              <th>Content</th>
+              <th>Updated</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each projects}}
+              <tr>
+                <td><a href="{{pathFor 'projectShow' projectId=_id}}">{{title}}</a></td>
+                <td>{{content}}</td>
+                <td>{{showTimeAgo updatedAt}}</td>
+                <td>{{showPrettyTimestamp createdAt}}</td>
+                <td>
+                  <a class="btn btn-xs btn-default" href="{{pathFor 'projectEdit' projectId=_id}}" role="button">Edit</a>
+                  <a class="btn btn-xs btn-danger delete-project" href="#" role="button">Delete</a>
+                </td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        {{else}}
+          <p>No projects yet.</p>
+        {{/if}}
+      {{else}}
+        {{> loading}}
+      {{/if}}
+
+    </div>
+  </div>
+
+</template>

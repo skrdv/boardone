@@ -1,0 +1,20 @@
+<template name="projectEdit">
+
+    {{#if Template.subscriptionsReady}}
+        {{#with project}}
+            <h2>Edit project</h2>
+
+            {{#autoForm collection="Projects" doc=this id="projectForm" type="update"}}
+                <fieldset>
+                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='content' rows=6}}
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a class="btn btn-link" role="button" href="{{pathFor 'projectsIndex'}}">Back</a>
+            {{/autoForm}}
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+
+</template>

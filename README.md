@@ -1,3 +1,5 @@
+# boardOne
+
 # Meteor-skeleton
 A boilerplate for Meteor - giving you a simple and more organized way to create projects.
 

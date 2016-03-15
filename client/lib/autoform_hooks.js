@@ -23,3 +23,24 @@ AutoForm.addHooks(['documentForm'], {
     }
   }
 });
+
+AutoForm.addHooks(['projectForm'], {
+  after: {
+    insert: function(error, result) {
+      if (error) {
+        console.log("Insert Error:", error);
+      } else {
+        console.log("Project inserted:", result);
+        FlowRouter.go('projectsIndex');
+      }
+    },
+    update: function(error) {
+      if (error) {
+        console.log("Update Error:", error);
+      } else {
+        console.log("Project updated");
+        FlowRouter.go('projectsIndex');
+      }
+    }
+  }
+});

@@ -1,0 +1,13 @@
+<template name="projectNew">
+
+  <h2>Create project</h2>
+
+  {{#autoForm collection="Projects" id="projectForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='title'}} {{> afQuickField name='content' rows=6}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a class="btn btn-link" role="button" href="{{pathFor 'projectsIndex'}}">Back</a>
+  {{/autoForm}}
+
+</template>
