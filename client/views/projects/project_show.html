@@ -1,13 +1,16 @@
 <template name="projectShow">
 
-  {{#if Template.subscriptionsReady}}
-    {{#with project}}
-      <h2>{{title}}</h2>
-      <p>{{content}}</p>
-      <a href="{{pathFor 'projectsIndex'}}" class="btn btn-default">Back</a>
-    {{/with}}
-  {{else}}
-    {{> loading}}
-  {{/if}}
+    {{#if Template.subscriptionsReady}}
+        {{#with project}}
+            <h2>{{title}}</h2>
+            <p>{{content}}</p>
+			{{#each image}}
+     			<img alt="{{this.name}}" src="{{this.url}}">
+			{{/each}}
+            <a href="{{pathFor 'projectsIndex'}}" class="btn btn-default">Back</a>
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
 
 </template>

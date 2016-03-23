@@ -13,3 +13,8 @@ Meteor.publish('projects', function() {
 Meteor.publish('project', function(id) {
   return Projects.find(id);
 });
+
+
+// Meteor.publish('images', function() {
+//   return Images.find();
+// });

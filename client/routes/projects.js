@@ -37,3 +37,12 @@ FlowRouter.route('/projects/:documentId/edit', {
   },
   name: "projectEdit"
 });
+
+
+
+// 
+// Router.route("profile", {
+//   waitOn: function() {
+//     return [Meteor.subscribe('images')];
+//   }
+// });

@@ -34,3 +34,5 @@ alanning:roles
 twbs:bootstrap
 momentjs:moment
 bootswatch:simplex
+yogiben:autoform-file
+cfs:standard-packages
